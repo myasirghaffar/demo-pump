@@ -1,0 +1,130 @@
+{
+  "name": "adamant-tradebot",
+  "version": "9.0.0",
+  "description": "ADAMANT's self-hosted market-making bot for crypto projects & token issuers. Volume, spread, liquidity, price ranges, and dynamic order books.",
+  "main": "app.js",
+  "bin": {
+    "mm": "bin/mm.js",
+    "adamant-tradebot": "bin/mm.js"
+  },
+  "files": [
+    "app.js",
+    "bin/",
+    "config.default.jsonc",
+    "docker/docker-compose.yml",
+    "Dockerfile",
+    "mm",
+    "modules/",
+    "types/",
+    "helpers/",
+    "trade/",
+    "api/",
+    "routes/",
+    "telegramBot/",
+    "assets/",
+    "docker-entrypoint.sh"
+  ],
+  "scripts": {
+    "lint": "npx eslint -f visualstudio .",
+    "lint:fix": "npx eslint -f visualstudio --fix",
+    "lint:fixrule": "npx eslint -f visualstudio --no-eslintrc --fix --env node,es2021,commonjs --parser-options=ecmaVersion:12 --rule",
+    "typecheck:webui-api": "tsc -p tsconfig.webui-api.json --pretty false",
+    "start": "node app.js",
+    "start:config": "node app.js",
+    "start:dev": "node app.js dev",
+    "clear": "node app.js clear_db",
+    "clear:config": "node app.js",
+    "test": "node scripts/run-jest.js",
+    "test:general": "JEST_SCOPE=1 jest tests/general",
+    "test:api-webui": "JEST_SCOPE=1 jest tests/api-webui"
+  },
+  "keywords": [
+    "market-making",
+    "market making",
+    "trading bot",
+    "self-hosted",
+    "trading volume",
+    "bot",
+    "bitcoin",
+    "ethereum",
+    "trading",
+    "trade",
+    "order book",
+    "orderbook",
+    "exchange",
+    "arbitrage",
+    "crypto",
+    "cryptocurrency",
+    "spread",
+    "liquidity",
+    "target price",
+    "price watching",
+    "making price"
+  ],
+  "author": "ADAMANT community developers <devs@adamant.im>, ADAMANT Foundation <devs@adamant.im> (https://adamant.im)",
+  "private": false,
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@fastify/cors": "^11.2.0",
+    "@fastify/jwt": "^10.1.0",
+    "@fastify/sensible": "^6.0.4",
+    "adamant-api": "^3.0.0",
+    "axios": "^1.18.1",
+    "deep-object-diff": "^1.1.9",
+    "fast-deep-equal": "^3.1.3",
+    "fast-jwt": "^6.2.4",
+    "fastify": "^5.9.0",
+    "json-parse-bigint": "^1.0.4",
+    "jsonminify": "^0.4.2",
+    "marked": "^15.0.12",
+    "marked-terminal": "^7.3.0",
+    "mongodb": "^7.4.0",
+    "pm2": "^7.0.3",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3",
+    "ws": "^8.21.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^8.0.1",
+    "@babel/eslint-parser": "^8.0.1",
+    "@babel/plugin-transform-runtime": "^8.0.1",
+    "@babel/preset-env": "^8.0.2",
+    "@babel/runtime": "^8.0.0",
+    "@eslint/js": "^10.0.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^26.1.0",
+    "axios-mock-adapter": "^2.1.0",
+    "eslint": "^10.6.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-formatter-visualstudio": "^9.0.1",
+    "globals": "^17.7.0",
+    "jest": "^30.4.2",
+    "lightweight-charts": "^5.2.0",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=22.2",
+    "npm": ">=9.0.1"
+  },
+  "overrides": {
+    "flatted": "^3.4.2",
+    "ws": "^8.21.0",
+    "qs": "^6.15.2",
+    "path-to-regexp": "^8.4.2",
+    "picomatch": "^4.0.4",
+    "js-yaml": "^4.1.0",
+    "socket.io-parser": "^4.2.6"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adamant-im/adamant-tradebot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Adamant-im/adamant-tradebot/issues"
+  },
+  "homepage": "https://marketmaking.app"
+}
