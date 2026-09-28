@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #070b12;
+  --bg-elevated: #0d1420;
+  --bg-panel: #111a28;
+  --bg-panel-2: #152033;
+  --line: rgba(120, 160, 200, 0.14);
+  --text: #e8eef7;
+  --muted: #8b9bb3;
+  --accent: #2dd4bf;
+  --accent-2: #38bdf8;
+  --buy: #22c55e;
+  --sell: #f43f5e;
+  --warn: #fbbf24;
+  --glow: rgba(45, 212, 191, 0.22);
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+  --font-sans: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(45, 212, 191, 0.12), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, rgba(56, 189, 248, 0.1), transparent 50%),
+    radial-gradient(800px 400px at 50% 100%, rgba(244, 63, 94, 0.06), transparent 45%),
+    var(--bg);
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(45, 212, 191, 0.35);
+}
+
+.panel {
+  background: linear-gradient(180deg, rgba(17, 26, 40, 0.92), rgba(13, 20, 32, 0.92));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(10px);
+}
+
+.panel-soft {
+  background: rgba(17, 26, 40, 0.7);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.accent-text {
+  background: linear-gradient(90deg, #2dd4bf, #38bdf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.grid-fade {
+  background-image:
+    linear-gradient(rgba(120, 160, 200, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 160, 200, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 var(--glow);
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--glow);
+  }
+  70% {
+    box-shadow: 0 0 0 12px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  animation: rise 0.55s ease both;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(120, 160, 200, 0.25);
+  border-radius: 999px;
+}

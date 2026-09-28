@@ -1,0 +1,34 @@
+node_modules/
+logs/
+# Docker user data (./mm init)
+docker/config/
+docker/trade-config/
+docker/logs/
+keys/
+.vscode/*
+!.vscode/settings.json
+tests.js
+config.*.jsonc
+config.jsonc
+config.dev.jsonc
+!config.default.jsonc
+.DS_Store
+.idea/
+test_*.js
+errcase.py
+error.list
+balances.out
+tests/debug_trader.js
+client.py
+test_encode.py
+coverage/
+trade/settings/*
+!trade/settings/tradeParams_Default.js
+
+# ai
+CLAUDE.md
+.ai-tasks/
+.ai-ignored/
+.cursor/
+.claude/
+.playwright-mcp/
